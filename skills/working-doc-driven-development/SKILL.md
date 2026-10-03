@@ -44,9 +44,14 @@ The doc should let a new agent resume without replaying the whole conversation a
 - completion record with no test/result evidence;
 - keeping already-resolved TODOs as if they were future work.
 
-## Evidence
+## Deep-dive heuristics
 
-- `altechcamera/AGENTS.md` — mandatory dated working docs.
-- `piggybankos/AGENTS.md` — explicit work tracking protocol and template.
-- `agencyos/docs/working/` — phase plans, audits, handoffs and completions.
-- `zennith-os/docs/working/` — extensive implementation and recovery records.
+- Record refuted assumptions and plan changes, not just the successful final narrative.
+- Keep unresolved steering separate from completed history so the next session does not re-open settled work.
+- A useful working record explains both **what changed** and **what evidence caused the plan to change**.
+
+## Evidence basis
+
+- Observed across multiple projects that preserve plans, changed assumptions, audits, outcomes and unresolved steering as durable working records.
+- Reinforced by histories where the working record is used for handoff and review rather than reconstructed after the fact.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).

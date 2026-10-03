@@ -57,9 +57,14 @@ You can answer:
 - losing source SHA/hash on handoff;
 - uncontrolled duplicate canon across formats.
 
-## Evidence
+## Deep-dive heuristics
 
-- `alamakfarm/README.md` and `docs/WORKFLOW.md` — preserve → derive → approve → publish-ready → handoff.
-- `agencyos/AGENTS.md` — correspondence linked before confirmed decision/version changes.
-- `piggybankos` — decision and lifecycle receipts preserve evidence state.
-- `zennith-os` — md-first canonical records with derived indexes.
+- When exact content matters, bind execution or approval to a digest/revision so later mutation is detectable.
+- Approval belongs to the specific version/reference that was reviewed, not merely to its human-readable label.
+- Auditing may store hashes, sizes and source identity while redacting sensitive payload bytes.
+
+## Evidence basis
+
+- Observed across knowledge, workflow and creative systems where source, derived work, approval and release are separate states.
+- Reinforced by revision identity, digests or receipts and gates that prevent rejected or stale derivatives becoming canonical.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).

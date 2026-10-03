@@ -58,9 +58,14 @@ The next similar task should require less bespoke reasoning, fewer repeated inst
 - runbook that is never wired into startup/normal workflow;
 - hundreds of overlapping skills with no canonical route.
 
-## Evidence
+## Deep-dive heuristics
 
-- `zennith-os/skills/` and AGENTS pipeline — repeated operations crystallized into executable skills and hooks.
-- `alamakfarm/skills/` — production gates and generation procedures captured as skills.
-- `piggybankos/workflows/` and `routines/` — recurring work materialized as artifacts.
-- `altechcamera/docs/agent-workspace/` — tool references/workflow recipes packaged for repeated agent operation.
+- After fixing the immediate incident, search for sibling bypasses that share the same failure class.
+- A good compound fix has a regression net broad enough to stop the class, not just the exact file that broke.
+- Prefer extending the existing canonical primitive over introducing a competing "better" framework.
+
+## Evidence basis
+
+- Observed across long-lived systems where incidents become reusable tests, validators, hooks, wrappers, skills or runbooks.
+- Reinforced by class-level regression work that removes sibling bypasses instead of patching one symptom.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).

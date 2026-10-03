@@ -59,10 +59,14 @@ For a domain operation, you can point to:
 - theme JavaScript carrying authoritative business rules;
 - duplicating a service because a new transport wants slightly different output.
 
-## Evidence
+## Deep-dive heuristics
 
-- `agencyos/plugins/gaia/job/services/JobStatusMachine.php` — explicit transition graph and role-aware cancellation.
-- `agencyos/plugins/gaia/job/services/JobService.php` — entitlement check, transactions, version creation, state transition and domain events.
-- `agencyos/plugins/gaia/{workspace,brief,job,deliverable,feedback,correspondence,decision,...}` — real bounded plugin layout.
-- `altechcamera/AGENTS.md` — plugin dependency map and service ownership across security, MCP, customer, market, transaction and stocktake domains.
-- Both repositories use October CMS 4 / Laravel 12 / PHP 8.2+.
+- Use transactions for state changes that create or update multiple authoritative records together.
+- Upsert/deduplicate external events by stable source identity instead of assuming delivery is exactly-once.
+- Test legal and illegal lifecycle transitions directly at the domain service/state-machine layer.
+
+## Evidence basis
+
+- Observed across independent Laravel/October applications with domain plugins, services, transactions, versions, permissions and explicit state machines.
+- Reinforced by service-level and lifecycle tests rather than controller-only behaviour.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).

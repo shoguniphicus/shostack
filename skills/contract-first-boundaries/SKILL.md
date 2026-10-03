@@ -57,8 +57,15 @@ A caller can determine:
 - public surfaces that expose internal fields because they already exist;
 - two services both claiming schema authority.
 
-## Evidence
+## Deep-dive heuristics
 
-- `agencyos/AGENTS.md` — explicit entities, states, versions, roles and queue lifecycle.
-- `piggybankos/memory/ACTION-DECISION-CONTRACT.md` — shared machine contract, exact recommendations, blocker schema, idempotent dispatch.
-- `altechcamera/AGENTS.md` and public MCP audit — scopes, tool contracts, public/admin separation.
+- A robust contract includes replay semantics: what happens if the same request arrives twice?
+- Bind authority to an exact identity/version/state; approval of one artifact must not silently authorize a later mutation.
+- Specify concurrency ownership where two workers could act on the same logical item.
+- Treat unknown enum/state/action values as errors rather than improvising a close-enough interpretation.
+
+## Evidence basis
+
+- Observed across workflow-heavy and agent-facing systems with explicit schemas, state transitions, permissions and retry semantics.
+- Reinforced by tests for illegal transitions, duplicate requests, stale authority and boundary failures.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).

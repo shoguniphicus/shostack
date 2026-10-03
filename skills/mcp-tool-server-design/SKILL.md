@@ -62,11 +62,15 @@ A tool audit can answer:
 - raw internal IDs/rankings/notes leaking because they were convenient to return;
 - embedding an LLM inside the server to re-reason structured domain truth unnecessarily.
 
-## Evidence
+## Deep-dive heuristics
 
-- `altechcamera/plugins/gaia/mcp/server/GaiaServer.php` — concrete Laravel MCP registry across product/order/customer/recommendation/etc.
-- `altechcamera/plugins/gaia/security/middleware/AiAgentSecurityMiddleware.php` — authentication, declared-scope enforcement, IP/rate controls and auditing.
-- `altechcamera/plugins/gaia/mcp/traits/GaiaToolTrait.php` — scoped tool dispatch that reuses existing application APIs and propagates authenticated context.
-- `altechcamera/docs/working/2026-10-03/public-mcp-discovery-matchmaking-audit.md` — separate public server, sanitized projections and intent-oriented surface.
-- `zennith-os/sidecar/mcp_server.py` — FastMCP boundary validates brands/inputs and dispatches into the same skill registry used elsewhere.
-- `agencyos/plugins/gaia/mcp/` + `plugins/gaia/security/` — another Laravel domain with MCP/security as first-class plugins.
+- Model trust at the MCP boundary itself; never rely on apparent network origin supplied by a proxy or local UI.
+- Separate safe read capabilities from mutating capabilities so observability can remain available during enforcement failures.
+- Audit tool calls without storing secrets or unnecessarily copying user payloads.
+- Test that an unauthorized caller cannot reach a write through an alternate generic tool.
+
+## Evidence basis
+
+- Observed across independent MCP implementations that keep domain truth outside the protocol adapter and enforce capability boundaries server-side.
+- Reinforced by authentication, input validation, safe projections, bounded capabilities and transport-parity tests.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).

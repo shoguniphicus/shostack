@@ -55,9 +55,16 @@ The evidence is reproducible and names:
 - code compiles → declaring integration validated;
 - "should work" presented as passed verification.
 
-## Evidence
+## Deep-dive heuristics
 
-- `zennith-os/skills/git-discipline/SKILL.md` — hook reachability tested by execution.
-- `zennith-os/skills/zen-ci/SKILL.md` — executable local CI and audited bypass.
-- `agencyos/docs/working/2026-08-21-p0-headless-hardening-final-audit.md` — explicitly refuses to claim green CI before a run.
-- `alamakfarm/docs/WORKFLOW.md` — visual/publishing gates require actual source pixels and explicit pass.
+- Prefer a test that would have failed on the old bug; a test passing on both versions is usually only a preservation control.
+- Inject failure at a seam shared by old and new implementations when possible, so the test is not biased toward the fix.
+- Test corruption, duplication, stale state, concurrency and authorization bypasses in addition to happy paths.
+- Keep controls that prove legitimate behaviour still works after the guard or fix is added.
+- Surface partial coverage honestly; "some sources healthy" is not the same claim as "complete."
+
+## Evidence basis
+
+- Observed across systems that test runtime reachability, real integration paths, fault injection and negative cases before making completion claims.
+- Reinforced by tests explicitly designed to fail on the pre-fix behaviour and pass only after the invariant is restored.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).

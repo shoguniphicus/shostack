@@ -60,10 +60,14 @@ A new machine/agent can determine:
 - global local checks that fail contributors for unrelated tree state;
 - undocumented per-machine magic.
 
-## Evidence
+## Deep-dive heuristics
 
-- `altechcamera/AGENTS.md` — PHP/artisan/composer/phpunit must run inside the Docker container.
-- `agencyos/docs/docker-setup.md` — October migrations executed through Docker Compose.
-- `zennith-os/skills/git-discipline/SKILL.md` — idempotent hook installation, reachability audit and local safety walls.
-- `zennith-os/skills/zen-ci/SKILL.md` — local pre-push CI with explicit audited bypass.
-- `piggybankos/AGENTS.md` — canonical broker wrapper required instead of raw calls.
+- Use a real datastore/runtime in end-to-end tests when substitute environments change semantics that matter.
+- Hermetic unit tests and real-path integration tests serve different purposes; keep both rather than pretending one replaces the other.
+- Installation checks should prove the hook/wrapper actually runs, not only that files were copied.
+
+## Evidence basis
+
+- Observed across containerized applications, Python sidecars and multi-machine repositories where runtime location changes correctness.
+- Reinforced by local hooks, wrapper commands and end-to-end checks against the actual execution environment.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).

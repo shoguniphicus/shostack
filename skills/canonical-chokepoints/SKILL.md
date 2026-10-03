@@ -51,9 +51,14 @@ Prevent drift by routing important mutations and policy decisions through one au
 - duplicated validation in client and server that can drift;
 - raw SDK calls when a policy wrapper already exists.
 
-## Evidence
+## Deep-dive heuristics
 
-- `zennith-os/docs/builders-guide.md` — one canonical writer and one binary chokepoint.
-- `altechcamera/docs/working/2026-10-03/public-mcp-discovery-matchmaking-audit.md` — reuse domain truth, not trusted-agent transport.
-- `agencyos/docs/working/2026-08-21-p0-headless-hardening-final-audit.md` — Agency remains schema/business authority; no semantic validator duplication.
-- `piggybankos/AGENTS.md` — broker operations go through the canonical wrapper.
+- Periodically audit for bypass writers/callers; a canonical path is not canonical if old shortcuts remain live.
+- When porting callers onto the chokepoint, preserve externally relied-on contracts while removing the bypass underneath.
+- Put the invariant at the lowest shared mutation point that every legitimate path can inherit.
+
+## Evidence basis
+
+- Observed across multiple systems that centralize writes, validation or side effects and regression-test historical bypasses.
+- Reinforced by migrations that preserve external behaviour while moving callers onto one authoritative path.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).
