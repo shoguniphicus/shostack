@@ -38,9 +38,17 @@ The individual skills under [`skills/`](skills/) make this loop executable.
 | [Provenance and promotion](skills/provenance-and-promotion/SKILL.md) | Preserve raw truth; promote derived state deliberately |
 | [Compound engineering](skills/compound-engineering/SKILL.md) | Convert repeated work into reusable institutional capability |
 
-### Implementation evidence
+### Implementation skills
 
-See [`docs/TECHNICAL-STACK.md`](docs/TECHNICAL-STACK.md). Technology is recorded separately from operating skill so the repo does not confuse "dependency exists" with "demonstrated engineering behaviour."
+| Skill | Maturity | What it captures |
+|---|---|---|
+| [October CMS / Laravel plugin systems](skills/octobercms-laravel-plugin-systems/SKILL.md) | repeated | Domain plugins, service layers, transactions, versions and state machines |
+| [MCP tool-server design](skills/mcp-tool-server-design/SKILL.md) | core | Safe AI capability surfaces backed by existing domain truth |
+| [Python FastAPI / Pydantic agent systems](skills/python-fastapi-pydantic-agent-systems/SKILL.md) | repeated | Shared Python core exposed through API, CLI and agent surfaces |
+| [Next.js operator dashboards](skills/nextjs-operator-dashboards/SKILL.md) | candidate | Responsive operational UIs over expensive and partially fresh data |
+| [Environment fidelity & local automation](skills/environment-fidelity-local-automation/SKILL.md) | core | Run and guard work in the environment that actually executes it |
+
+See [`docs/TECHNICAL-STACK.md`](docs/TECHNICAL-STACK.md) for the wider observed stack. Technology is recorded separately from skill so the repo does not confuse "dependency exists" with "demonstrated engineering behaviour."
 
 ## Evidence base
 
@@ -72,7 +80,7 @@ ShoStack does not use inflated labels such as "expert" by default.
 - **repeated** — observed independently in at least two projects;
 - **core** — repeated across three or more materially different systems, or encoded as an explicit cross-project rule.
 
-The current operating skills are intentionally conservative. New evidence may split, merge, strengthen, or retire them.
+The current skills are intentionally conservative. New evidence may split, merge, strengthen, demote, or retire them.
 
 ## Why this exists
 
