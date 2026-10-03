@@ -1,113 +1,84 @@
-# Technical implementation evidence
+# Implementation environments
 
-This inventory records technologies with direct repository evidence. It is **not a proficiency ranking**.
+This file records broad coding environments in which the ShoStack methods have been demonstrated. It intentionally avoids mirroring dependency manifests or proprietary architecture.
 
-## PHP / commerce / operational web systems
+Technology presence is **not** a proficiency score.
 
-Observed in `altechcamera` and `agencyos`:
+## PHP application systems
 
-- PHP 8.2+
-- October CMS 4.x
+Demonstrated environment:
+
+- PHP 8+
 - Laravel 12
-- Eloquent / October models and plugin architecture
-- PHPUnit
-- PHP_CodeSniffer
-- Laravel MCP
-- Laravel Cashier
-- Elasticsearch client
-- Flysystem / AWS S3
-- Symfony HTTP / Mailgun
-- Google Analytics Data API
+- October CMS 4
+- relational models and migrations
+- modular plugin/domain architecture
+- PHPUnit-style testing
+- API middleware and authorization
+- container-aware development
 
-Demonstrated patterns include modular plugins, API middleware, permission scopes, versioned domain models, workflow state machines, agent-facing tool surfaces, and service-layer boundaries.
+Repeated methods include domain services, transactions, explicit lifecycle state, versioned business records and thin transport layers.
 
-## Browser / frontend systems
+## Python operational / agent systems
 
-Observed in `altechcamera` and `agencyos`:
+Demonstrated environment:
 
-- JavaScript
-- Vue 2
-- Bootstrap 5
-- Laravel Mix / webpack
-- Chart.js
-- Monaco editor
-- SortableJS
-- Playwright Core
-
-Observed in `piggybankos/ui-next`:
-
-- Next.js 15
-- React 19
-- TypeScript 5.7
-- Tailwind CSS 4
-- Recharts
-- React Markdown / GFM
-
-## Python / agent and workflow systems
-
-Observed strongly in `zennith-os` and `piggybankos`:
-
-- Python
+- Python 3
 - FastAPI
-- Pydantic v2
+- Pydantic
 - pytest
-- boto3 / S3
-- networkx / graph computation
-- Anthropic SDK
-- Google GenAI SDK
-- MCP Python SDK
-- CLI + HTTP dual surfaces
-- shell/Python automation and validators
+- CLI + HTTP + MCP surfaces
+- file/record processing
+- relational/derived indexes
+- background jobs and health surfaces
 
-## Agent protocols / orchestration
+Repeated methods include typed boundaries, canonical shared cores, atomic persistence, idempotency, fault-aware recovery and privacy-aware auditing.
 
-Observed across Altech, AgencyOS, Zennith, Piggybank:
+## Frontend / operator systems
+
+Demonstrated environment:
+
+- Next.js / React / TypeScript
+- Vue / JavaScript
+- responsive component systems
+- operational charts/tables
+- client caching and live refresh
+
+Observed methods include independent data surfaces, stale-request cancellation, cache versioning and visible health/freshness states.
+
+## Agent interoperability
+
+Demonstrated environment:
 
 - MCP servers and tools
 - permission-scoped agent APIs
-- machine-readable schemas and contracts
-- queue / claim / execute / submit patterns
-- durable handoffs and decision artifacts
-- agent memory / operator memory separation
-- approval and proposal flows
-- n8n integration / workflow automation
+- machine-readable contracts
+- agent work queues / handoffs
+- human approval boundaries
+- audited actions
 
-## Environment / delivery
+The skill claim is not "uses MCP." It is the design of safe, bounded agent capability over existing domain truth.
 
-Observed across the repos:
+## Delivery and operations
 
-- Git / GitHub PR workflows
-- branch hygiene and merge guards
-- local git hooks
-- local CI / pre-push gates
-- Docker-aware development
-- Composer / npm / uv-style Python packaging
-- structured migrations / versioning
-- S3-backed artifact storage
-- environment-specific wrappers rather than raw one-off calls
+Demonstrated environment:
 
-## Data and knowledge modelling
+- Git/GitHub review workflows
+- Docker-aware runtime execution
+- local hooks and local CI
+- automated validators and smoke tests
+- branch/revision discipline
+- object/file-backed artifact workflows
 
-Observed across Zennith, Alamak Farm, AgencyOS and Piggybank:
+## Data / knowledge modelling
 
-- Markdown/JSON as durable records
-- manifests and registries
-- stable IDs
-- typed references
-- append-only or revision ledgers
-- source provenance
-- derived/rebuildable indexes
-- explicit state/promotion transitions
+Demonstrated patterns include:
 
-## Next evidence to mine
+- stable identities and explicit state transitions;
+- revision/provenance records;
+- canonical records with rebuildable indexes/caches;
+- typed references;
+- append/reconciliation ledgers;
+- manifests and registries.
 
-Future passes should add:
-
-- representative production code, not just architecture/working docs;
-- test suites and failure cases;
-- migration patterns;
-- deployment/runtime topology;
-- database/index design;
-- frontend UX component patterns;
-- observability and incident-recovery examples;
-- additional repositories to challenge whether these abstractions really generalize.
+Specific source schemas, business logic and storage topology are intentionally excluded. See [the disclosure policy](DISCLOSURE-POLICY.md).

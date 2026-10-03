@@ -1,174 +1,58 @@
-# Evidence map
+# Evidence methodology
 
-This file records the evidence used for the first ShoStack distillation. It is intentionally path-based: future audits should be able to reopen the source and challenge the abstraction.
+ShoStack skills are grounded in real implementation, but this public repository intentionally keeps the underlying proprietary implementation out of the evidence record.
 
-## 1. altechcamera
+## Evidence strength
 
-Representative evidence:
+From weaker to stronger:
 
-- `AGENTS.md`
-  - dated working doc required before code;
-  - October CMS / Laravel plugin dependency map;
-  - explicit source-of-truth ordering for MCP tools;
-  - runtime commands must execute inside Docker;
-  - validator/apply-path contracts;
-  - agent security scopes and error-envelope rules.
-- `docs/working/2026-10-03/public-mcp-discovery-matchmaking-audit.md`
-  - read-only is not treated as automatically public-safe;
-  - public MCP gets a separate capability boundary;
-  - existing domain truth is reused through sanitized projections;
-  - compatibility fails closed;
-  - initial tool surface is intentionally small and intent-oriented.
-- `composer.json`
-  - PHP 8.2+, October CMS 4, Laravel 12, Laravel MCP, Elasticsearch, S3/Flysystem, GA4.
-- `package.json`
-  - Laravel Mix, Vue 2, Bootstrap, Chart.js, Monaco, Playwright Core.
+1. **Dependency presence** — proves a technology appears in a project.
+2. **Documentation/architecture** — proves an intended method or rule exists.
+3. **Production implementation** — proves the method is encoded in executable code.
+4. **Tests and negative cases** — prove important invariants and failure behaviour.
+5. **Operational repetition** — proves the method survived use, incidents, recovery and later changes.
+6. **Independent repetition** — proves the behaviour generalizes across materially different systems.
 
-Signals:
-- canonical boundaries;
-- agent-native interfaces;
-- least-capability design;
-- environment fidelity;
-- evidence-backed architecture reuse.
+Skill maturity is based primarily on levels 3–6.
 
-## 2. agencyos
+## Source diversity
 
-Representative evidence:
+The initial evidence base spans multiple materially different kinds of systems, including:
 
-- `AGENTS.md`
-  - workspace/brief/job/deliverable/feedback/correspondence/decision are explicit domain concepts;
-  - versioned entities and state machines;
-  - plugin-level bounded contexts;
-  - role/permission matrix;
-  - job claim → execute → submit → review lifecycle;
-  - correspondence is linked before confirmed decisions become clean records.
-- `docs/working/`
-  - repeated plan, phase, audit, handoff, regression, and completion records.
-- `docs/working/2026-08-21-p0-headless-hardening-final-audit.md`
-  - clear responsibility boundary between Agency and Headless;
-  - explicit P1 deferrals instead of uncontrolled P0 expansion;
-  - no green claim without executable CI evidence;
-  - duplicated validators are rejected in favour of one schema authority.
-- `composer.json`
-  - October CMS 4.2, Laravel 12, Laravel MCP, Cashier, PHPUnit, PHPCS.
+- long-lived web/business applications;
+- agent-facing operational systems;
+- workflow and decision automation;
+- operator dashboards and sidecars;
+- creative/content production pipelines.
 
-Signals:
-- contract-first modelling;
-- explicit ownership;
-- phase-bounded delivery;
-- audit before promotion;
-- versioned workflow state.
+The public repo does not reproduce the source projects' algorithms, schemas, routes, prompts or operational topology.
 
-## 3. piggybankos
+## What the second deep dive added
 
-Representative evidence:
+The deeper code/test review revealed several recurring behaviours that were underrepresented in the first pass:
 
-- `AGENTS.md`
-  - substantial work requires a dated working record;
-  - every executed and skipped decision is logged;
-  - missing safety-critical evidence is a named blocker;
-  - uncertainty normally reduces size/reversibility rather than causing unbounded waiting;
-  - one canonical wrapper is required for broker operations;
-  - missed routines are recovered in a bounded way instead of chaining stale work.
-- `memory/ACTION-DECISION-CONTRACT.md`
-  - shared machine-readable output contract;
-  - deterministic thresholds live in config, not hidden agent intuition;
-  - exactly one current decision controls a setup;
-  - idempotent dispatch keys prevent duplicate work;
-  - `MONITOR` requires owner, expiry, trigger, cost of waiting, and fallback.
-- `workflows/`, `routines/`, `scripts/`, `memory/`
-  - workflows are explicit artifacts rather than implicit conversational behaviour.
-- `ui-next/package.json`
-  - Next.js 15, React 19, TypeScript 5.7, Tailwind 4, Recharts.
+- explicit idempotency and duplicate-effect prevention;
+- reconciliation after uncertain or partial external effects;
+- atomic persistence and stale-writer/race prevention;
+- derived caches/indexes treated as disposable rather than canonical;
+- failure injection and regression tests aimed at the old bug class;
+- authority bound to exact state/version rather than vague role assumptions;
+- deliberate fail-open vs fail-closed choices based on whether truth/authority is at risk;
+- audit trails that redact sensitive payloads while preserving diagnostic value;
+- partial/degraded results surfaced honestly rather than reported as complete.
 
-Signals:
-- reversible action under uncertainty;
-- explicit machine contracts;
-- observability for both actions and omissions;
-- idempotency;
-- bounded recovery.
+These behaviours became new skills instead of being buried as implementation trivia.
 
-## 4. zennith-os
+## Public evidence basis
 
-Representative evidence:
+Each skill ends with an **Evidence basis** section that describes the classes of systems and checks in which the behaviour was observed.
 
-- `AGENTS.md`
-  - process-first read order;
-  - stale-tree verification before repo claims;
-  - separate agent/operator/vault memory;
-  - skills are executable specs;
-  - hooks enforce repeat failure walls;
-  - git-level guards are distinguished from agent-session hooks;
-  - canonical build pipeline G0→G9 plus compounding.
-- `docs/builders-guide.md`
-  - one canonical writer;
-  - one binary chokepoint;
-  - derived indexes are rebuildable;
-  - user intent is mapped to existing architecture before coding;
-  - new requirements extend canonical primitives rather than bypassing them.
-- `skills/git-discipline/SKILL.md`
-  - commit/push guards;
-  - tree-collapse protection;
-  - reachability is tested by execution rather than grep/presence;
-  - pull-triggered self-healing hook installation.
-- `skills/zen-ci/SKILL.md`
-  - local CI;
-  - one config plan is the source of truth;
-  - state checks are path-scoped to avoid blaming unrelated changes;
-  - bypasses emit audit records.
-- `pyproject.toml`
-  - Python, FastAPI, Pydantic, boto3, networkx, Anthropic, Google GenAI, MCP, pytest.
+Exact repository paths and implementation details are intentionally omitted under [the disclosure policy](DISCLOSURE-POLICY.md).
 
-Signals:
-- compound engineering;
-- guardrails as code;
-- executable verification;
-- canonical chokepoints;
-- agent-operable systems.
+## Maturity interpretation
 
-## 5. alamakfarm
+- **candidate** — strong evidence in one implementation;
+- **repeated** — independent evidence in at least two systems;
+- **core** — evidence across three or more materially different systems, or a cross-project invariant with executable enforcement.
 
-Representative evidence:
-
-- `README.md`
-  - folders organize files; manifests organize meaning; Git stores history;
-  - creative truth and public publishing are different states;
-  - story IP is format-independent and adaptations derive from it.
-- `docs/WORKFLOW.md`
-  - raw material preserved before derivation;
-  - explicit intake modes;
-  - generation/review gates;
-  - approved vs publish-ready vs downstream published are distinct promotions;
-  - publishing manifests pin source Git commit SHA;
-  - rejected derivatives never become the next source parent.
-- `docs/BRANCHING.md`
-  - short-lived coherent branches;
-  - safe merge sequence for automated edits;
-  - re-read before replace;
-  - compare before merge;
-  - no force update to main;
-  - branches are temporary workspaces, not taxonomy.
-- `skills/`
-  - repeated creative processes are crystallized as executable skill specs.
-
-Signals:
-- provenance;
-- promotion gates;
-- branch safety;
-- canonical source packets;
-- reusable skills from repeated production work.
-
-## Cross-repo patterns
-
-The strongest cross-project patterns are:
-
-1. **Reality before abstraction.**
-2. **Working records before / during implementation.**
-3. **One canonical truth or write path per responsibility.**
-4. **Contracts and states before uncontrolled automation.**
-5. **Small, reversible action under uncertainty.**
-6. **Verification that tests the real execution path.**
-7. **Agent surfaces with explicit permissions and machine-readable semantics.**
-8. **Guardrails encoded in tooling instead of remembered as advice.**
-9. **Raw → reviewed → approved → published is a promotion chain, not a single state.**
-10. **Repeated solutions are compounded into skills, hooks, scripts, templates and runbooks.**
+This is deliberately conservative. A sophisticated one-off implementation is still a candidate until repetition proves it is a stable personal engineering habit.

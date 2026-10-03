@@ -1,88 +1,53 @@
-# Initial ShoStack skill distillation — Progress Log (2026-10-03)
+# Initial ShoStack skill distillation — Public record (2026-10-03)
 
-## Scope & objectives
+## Scope
 
-- Inspect the first five source repositories supplied by Sho.
-- Distill repeated engineering behaviour rather than produce a technology résumé.
-- Seed `shostack` with portable, evidence-backed skill contracts.
-- Keep technology inventory separate from behavioural skill claims.
+The first pass audited five materially different production and operational systems to identify behaviours that repeated across domains.
 
-## Repositories inspected
+The goal was to distinguish:
 
-- `shoguniphicus/altechcamera`
-- `shoguniphicus/piggybankos`
-- `shoguniphicus/agencyos`
-- `shoguniphicus/zennith-os`
-- `shoguniphicus/alamakfarm`
+- **how Sho builds**;
+- from **which technologies happen to be present**.
 
-## Evidence inspected
+Detailed source paths and proprietary implementation notes are intentionally not reproduced in ShoStack.
 
-Representative surfaces included:
+## First-pass interpretation
 
-- repo roots and recent commits;
-- `AGENTS.md` / README operating instructions;
-- `docs/working/` structures and selected audits;
-- Altech public MCP audit;
-- Agency P0 final hardening audit;
-- Piggybank action-decision contract;
-- Zennith builder / git-discipline / zen-ci patterns;
-- Alamak Farm workflow and branching rules;
-- Composer, npm and Python package manifests.
-
-See `docs/EVIDENCE.md` for path-level details.
-
-## Interpretation
-
-The strongest repeated pattern is not one framework. It is a process:
+The strongest cross-system loop was:
 
 `inspect → establish truth → contract → working record → canonical implementation → verify → promote → compound`.
 
-This appears in commerce, agency workflow, investing/quant automation, creative production, and a large AI marketing OS.
+That produced the first operating-skill set around:
 
-## Initial core skills
+- reality-first reading;
+- working records;
+- canonical chokepoints;
+- contracts;
+- reversible change;
+- evidence-gated verification;
+- agent-native design;
+- executable guardrails;
+- provenance/promotion;
+- compound engineering.
 
-1. reality-first repo reading;
-2. working-doc-driven development;
-3. canonical chokepoints;
-4. contract-first boundaries;
-5. bounded reversible change;
-6. evidence-gated verification;
-7. agent-native system design;
-8. guardrails as code;
-9. provenance and promotion;
-10. compound engineering.
+## Implementation environments
 
-## Code-level validation pass
+The first pass also recorded repeated evidence in:
 
-The first abstraction pass was checked against implementation, not just architecture notes:
+- PHP/Laravel/October CMS application systems;
+- Python/FastAPI/Pydantic operational systems;
+- MCP/agent tool surfaces;
+- operator dashboards;
+- Docker/Git/local automation.
 
-- **Altech** — `GaiaServer.php` registers the actual MCP tool surface; `AiAgentSecurityMiddleware.php` enforces authentication, declared scopes, IP/rate limits and audit; `GaiaToolTrait.php` reuses existing API controllers while propagating security context; `ContextualRecommendationGraphService.php` explicitly refuses to invent recommendation candidates.
-- **AgencyOS** — the real `plugins/gaia/*` bounded contexts exist; `JobStatusMachine.php` encodes legal lifecycle transitions and cancellation authority; `JobService.php` wraps creation/versioning/status changes in domain services and transactions.
-- **PiggybankOS** — `config/action-policy.yaml` is a real policy kernel; `scripts/quant_funnel.py` records lifecycle receipts and writes scorecards atomically; `ui_api/main.py` is a FastAPI operational sidecar; the Next.js dashboard uses reusable live-fetch/cache/cancellation mechanics.
-- **Zennith OS** — `sidecar/records.py` is genuinely a canonical write chokepoint with brand/reference/invariant enforcement; `sidecar/mcp_server.py` validates inputs and routes MCP calls through the same registered skill/domain surfaces rather than creating a second truth store.
+These were kept separate from operating skills to avoid mistaking a package list for an engineering capability.
 
-This pass strengthened the claim that the operating patterns are implemented behaviour, not merely preferred documentation style.
+## Claim restraint
 
-## Implementation skill layer
+A dependency proves presence, not mastery.
 
-The first concrete environment skills are:
+Stronger evidence comes from implementation, tests, failure handling, operational repetition and independent reuse across systems.
 
-1. October CMS / Laravel plugin systems — **repeated**;
-2. MCP tool-server design — **core**;
-3. Python FastAPI / Pydantic agent systems — **repeated**;
-4. Next.js operator dashboards — **candidate**;
-5. environment fidelity & local automation — **core**.
+## Follow-up
 
-The lower maturity on Next.js is deliberate: Piggybank provides strong production evidence, but the current audit does not yet show the same pattern independently in another supplied repository.
-
-## Important restraint
-
-A dependency in `composer.json`, `package.json`, or `pyproject.toml` proves presence/use in a project. It does not alone justify a mastery claim. Framework evidence is promoted into a skill only when production code shows how it is actually used.
-
-## Validation
-
-- Every operating skill has evidence from at least two repositories.
-- Core abstractions were preferred only where the behaviour repeats across materially different domains.
-- Implementation skills were checked against actual services, middleware, state machines, APIs, hooks or UI code.
-- Repo-specific rules remain cited as evidence rather than being copied blindly into universal procedure.
-- Work is developed on reusable `dev`, compared with current `main`, and intended to reach `main` through a reviewed PR rather than a direct write.
+The second deep dive focuses on tests and failure behaviour and adds a disclosure policy so future mining can use proprietary source evidence without publishing proprietary product mechanics.
