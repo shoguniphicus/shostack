@@ -55,9 +55,14 @@ The working record states:
 - widening P0 because adjacent improvements are tempting;
 - destructive cleanup when a narrower correction suffices.
 
-## Evidence
+## Deep-dive heuristics
 
-- `piggybankos/memory/ACTION-DECISION-CONTRACT.md` — smaller reversible action under uncertainty.
-- `agencyos/docs/working/2026-08-21-p0-headless-hardening-final-audit.md` — explicit P1 deferrals and narrow correction.
-- `altechcamera/docs/working/2026-10-03/public-mcp-discovery-matchmaking-audit.md` — deliberately small Phase 1 public surface.
-- `alamakfarm/docs/BRANCHING.md` — coherent temporary branches and safe merge.
+- Separate **mode** from **policy**: off, observe/shadow, sandbox/canary and full execution are useful distinct authority levels.
+- Reads and writes may have different availability rules; keeping diagnostics available does not imply mutations should proceed.
+- Define the maximum blast radius before rollout, not after an incident.
+
+## Evidence basis
+
+- Observed across production rollout, automation and content/workflow systems that use staged scope, reversible branches or versions and explicit deferrals.
+- Reinforced by staged execution controls that reduce blast radius before increasing authority.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).

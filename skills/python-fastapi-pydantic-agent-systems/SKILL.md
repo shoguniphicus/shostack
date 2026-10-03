@@ -54,10 +54,14 @@ The same domain action can be reasoned about independently of whether it arrived
 - startup doing irreversible work merely because the server booted;
 - free-form dictionaries everywhere when a contract is stable enough for models.
 
-## Evidence
+## Deep-dive heuristics
 
-- `zennith-os/pyproject.toml` — FastAPI, Pydantic, MCP, pytest and a `zen` CLI entrypoint.
-- `zennith-os/sidecar/records.py` — canonical Python write layer with reference/brand/invariant enforcement.
-- `zennith-os/sidecar/mcp_server.py` — typed MCP dispatch into the shared skill registry.
-- `piggybankos/ui_api/main.py` — FastAPI operational sidecar with lifespan checks, derived-index warm start, routers and SSE.
-- `piggybankos/scripts/quant_funnel.py` — CLI around shared domain logic with atomic durable scorecard writes.
+- Persist important files atomically: a failed write should leave either the old valid state or the new valid state, never a torn hybrid.
+- Expose liveness separately from basic HTTP reachability when workers/background execution can stall while the server still answers.
+- Degraded replicas/caches may be skipped only if the response surfaces that coverage loss and authoritative local truth remains sound.
+
+## Evidence basis
+
+- Observed across independent Python operational systems where APIs, CLIs and agent surfaces share a typed domain core.
+- Reinforced by atomic persistence, derived-cache rebuildability, health/liveness surfaces and boundary validation.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).

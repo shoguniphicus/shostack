@@ -53,10 +53,15 @@ A fresh agent can use the surface correctly from its docs/schema without privile
 - ambiguous free-form error text;
 - an agent session becoming the only memory of a decision.
 
-## Evidence
+## Deep-dive heuristics
 
-- `altechcamera/AGENTS.md` — MCP tools, scopes, agent workspaces and references.
-- `altechcamera` public MCP audit — separate public server, intent-oriented tools, sanitized projections.
-- `agencyos/AGENTS.md` — agent role, job claim/submit lifecycle and permission matrix.
-- `zennith-os/AGENTS.md` — executable skills, memory separation and agent navigation map.
-- `piggybankos/AGENTS.md` — message/proposal channels and logged autonomous decisions.
+- Apparent locality is not authority; identity and capability must survive proxies, UI rewrites and transport changes.
+- Make execution mode explicit so an agent can observe, simulate, stage or execute without ambiguous side effects.
+- Separate **decision authority** from **execution mechanics**; a worker should not re-invent the decision it was asked to carry out.
+- Give agents machine-readable blockers and recovery conditions rather than vague "try later" prose.
+
+## Evidence basis
+
+- Observed across multiple production systems where AI agents operate through explicit, permission-bounded capabilities rather than raw infrastructure access.
+- Reinforced by implementation and tests covering authentication, lifecycle state, audit trails and human authority boundaries.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).

@@ -60,13 +60,14 @@ Test:
 - every endpoint polling at the same interval;
 - hiding stale/error state behind a perpetual spinner.
 
-## Evidence
+## Deep-dive heuristics
 
-- `piggybankos/ui-next/package.json` — Next.js 15, React 19, TypeScript, Tailwind and Recharts.
-- `piggybankos/ui-next/app/overview/page.tsx` — independent operational cards and endpoint-specific cadence.
-- `piggybankos/ui-next/lib/use-live-fetch.ts` — versioned session cache, AbortController, visibility refresh, backoff/jitter and stale-key reset.
-- `piggybankos/ui_api/main.py` — corresponding FastAPI/SSE operational backend.
+- Use single-flight or equivalent coalescing for concurrent cache misses to prevent expensive fan-out.
+- Version client caches across breaking payload changes; stale shape is a correctness problem, not just a freshness problem.
+- Cancel superseded requests so an old response cannot overwrite a newer operator selection.
 
-## Maturity note
+## Evidence basis
 
-This is intentionally `candidate`: the implementation evidence is strong, but the current source set shows this exact dashboard pattern primarily in PiggybankOS. Promote after an independent second implementation is verified.
+- Observed in a production operator dashboard with independently refreshing surfaces, stale-request cancellation and versioned client caching.
+- Current evidence remains candidate until a second independent implementation is audited.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).

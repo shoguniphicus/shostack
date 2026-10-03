@@ -53,9 +53,15 @@ Turn a recurring costly failure into an executable prevention or detection mecha
 - brittle grep-based "installed" checks;
 - guard logic duplicated in many places.
 
-## Evidence
+## Deep-dive heuristics
 
-- `zennith-os/skills/git-discipline/SKILL.md` — branch, push, tree-collapse, ontology and sentinel walls.
-- `zennith-os/skills/zen-ci/SKILL.md` — pre-push local CI and path-scoped state checks.
-- `altechcamera/AGENTS.md` — validator/apply-path contract and normalized agent errors.
-- `alamakfarm/docs/WORKFLOW.md` — mandatory visual-fidelity and source-lock gates.
+- For high-risk mutation surfaces, prefer **deny unknown / allow known-safe** over maintaining an ever-growing list of dangerous cases.
+- Never infer trust from locality, filenames, network shape or other context an intermediary can rewrite.
+- Keep observability/read surfaces available where safe even when mutation is blocked.
+- Preserve a regression test for the refuted design so a future simplification cannot silently reopen the hole.
+
+## Evidence basis
+
+- Observed across systems that convert recurring failure modes into executable checks at commit, write, request or promotion boundaries.
+- Reinforced by adversarial tests, deny-by-default mutation rules and audited escape paths.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).

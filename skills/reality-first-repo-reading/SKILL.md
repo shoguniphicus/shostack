@@ -55,9 +55,14 @@ A good working record can answer:
 - claiming "not implemented" because one expected path was absent;
 - using a stale branch as architectural evidence.
 
-## Evidence
+## Deep-dive heuristics
 
-- `zennith-os/AGENTS.md` — process-first read order and stale-tree check.
-- `altechcamera/AGENTS.md` — project-specific architecture and Docker runtime rules.
-- `agencyos/AGENTS.md` — "check the real structure before assuming files exist."
-- `alamakfarm/README.md` — explicit human/GPT read order.
+- Read recent failures and regression tests, not only architecture docs; bugs reveal the real load-bearing boundaries.
+- When docs and executable behaviour disagree, name the contradiction and verify which side is current.
+- Treat deployment/runtime topology as part of the referent: the same source tree can behave differently across host, container, worker or browser.
+
+## Evidence basis
+
+- Observed across long-lived repositories where current-tree, local-instruction and runtime checks are required before architecture claims.
+- Reinforced by incident and test history showing that documented intent and executable reality can diverge.
+- Source implementation details are intentionally omitted under [the disclosure policy](../../docs/DISCLOSURE-POLICY.md).
