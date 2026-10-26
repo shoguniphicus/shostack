@@ -54,4 +54,7 @@ A coding agent that knows nothing about Sho should be able to read one `SKILL.md
 ## Product delivery synthesis
 
 [SaaS delivery discipline](saas-delivery-discipline/SKILL.md) links existing methods into a full product change lifecycle. This newly packaged starter is a **candidate**, not a benchmarked commercial tool. Start with [the public templates](../starter/README.md).
-\n## Upstream discovery\n\n[Idea-to-SaaS discovery](idea-to-saas-discovery/SKILL.md) turns a raw founder idea into revisable, evidence-aware product intent through the [Rites of Passage](../docs/RITES-OF-PASSAGE.md). The [starter pack](../starter/idea-to-saas/README.md) provides a private workspace for the interview. Maturity remains **candidate** until behavioral evaluation proves the packaged interviewer.\n
+
+## Upstream discovery
+
+[Idea-to-SaaS discovery](idea-to-saas-discovery/SKILL.md) turns a raw founder idea into revisable, evidence-aware product intent through the [Rites of Passage](../docs/RITES-OF-PASSAGE.md). The [starter pack](../starter/idea-to-saas/README.md) provides a private workspace for the interview. Maturity remains **candidate** until behavioral evaluation proves the packaged interviewer.
