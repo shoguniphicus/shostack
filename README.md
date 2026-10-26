@@ -65,7 +65,8 @@ The second deep dive sharpened the recurring loop into:
 | [Privacy-aware observability](skills/privacy-aware-observability/SKILL.md) | Diagnose and audit without copying secrets/private payloads |
 | [Provenance & promotion](skills/provenance-and-promotion/SKILL.md) | Preserve source identity and promote state explicitly |
 | [Compound engineering](skills/compound-engineering/SKILL.md) | Convert repeated lessons into reusable system capability |
-| [Idea-to-SaaS discovery](skills/idea-to-saas-discovery/SKILL.md) | Progressive founder-led product discovery and meaningful rites of passage; **candidate** |\n| [SaaS delivery discipline](skills/saas-delivery-discipline/SKILL.md) | Product-to-verified-change workflow; new **candidate** synthesis |
+| [Idea-to-SaaS discovery](skills/idea-to-saas-discovery/SKILL.md) | Progressive founder-led product discovery and meaningful rites of passage; **candidate** |
+| [SaaS delivery discipline](skills/saas-delivery-discipline/SKILL.md) | Product-to-verified-change workflow; new **candidate** synthesis |
 
 ## Implementation skills
 
