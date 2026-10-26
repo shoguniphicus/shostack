@@ -2,7 +2,7 @@
 
 > ShoStack is the engineering method Sho uses in real product work. It is not a prompt collection written solely to sell, a copy of client source code, or an independently benchmarked product.
 
-Building software with AI involves more than asking for code. Existing systems have users, owners, contracts, state, regressions, integrations and releases. ShoStack provides a **repeatable way to direct the work and demand evidence**.
+If the founder has not yet articulated their product, start with [the Rites of Passage](RITES-OF-PASSAGE.md) and its [Idea-to-SaaS discovery pack](../starter/idea-to-saas/README.md). This document takes over once a concrete, bounded change or experiment has been earned.\n\nBuilding software with AI involves more than asking for code. Existing systems have users, owners, contracts, state, regressions, integrations and releases. ShoStack provides a **repeatable way to direct the work and demand evidence**.
 
 ## The product-to-verification loop
 

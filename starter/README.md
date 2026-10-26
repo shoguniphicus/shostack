@@ -2,6 +2,10 @@
 
 This is the *open, editable specification layer* of the harness, not a one-command automation product or a set of validated integrations.
 
+## Have an idea, but not yet a product specification?
+
+Start upstream with [ShoStack / Idea-to-SaaS](idea-to-saas/README.md): a guided discovery interviewer, persistent KNOW / THINK / UNKNOWN records, decision history, progressive question coverage, and a safe workspace initializer. Only move to the general coding starter below when there is a bounded task worth implementing.
+
 ## Install into an existing project
 
 1. Read existing agent instructions and project-specific ownership rules. Do **not** overwrite them blindly.
