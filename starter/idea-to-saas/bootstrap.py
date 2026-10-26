@@ -58,7 +58,7 @@ def bootstrap(workspace: Path, dry_run: bool = False) -> int:
     return 0
 
 
-def main(argv: list[str] | None = None) -> int:
+def main(argv=None) -> int:
     parser = argparse.ArgumentParser(
         description="Create the private ShoStack idea-to-SaaS discovery records without overwriting existing files."
     )
