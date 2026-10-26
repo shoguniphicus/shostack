@@ -8,6 +8,16 @@ It is deliberately **not** a mirror of source repositories. Private or proprieta
 
 See [the disclosure policy](docs/DISCLOSURE-POLICY.md).
 
+## Start before coding: the Rites of Passage
+
+**Have an idea but cannot yet explain the whole product?** Start with the [Idea-to-SaaS discovery pack](starter/idea-to-saas/README.md), not a giant one-shot specification. The agent asks progressive, context-aware questions, distinguishes what you know / think / do not know, records changed decisions, and helps earn the right to build.
+
+- [**The Rites of Passage**](docs/RITES-OF-PASSAGE.md) — nine revisitable stages from rough idea through evidence-backed delivery.
+- [**How a founder steers AI**](docs/FOUNDER-STEERING-PATTERNS.md) — real-world conversational moves: challenge, simplify, disagree, audit, mock, record and verify.
+- [**Idea-to-SaaS starter**](starter/idea-to-saas/README.md) — safe bootstrap, private product/decision/next records, reusable interviewing instructions and scenario checks.
+
+This is a **candidate** discovery package; not a magic app generator or a proven business-outcome guarantee.
+
 ## The working system behind real SaaS builds
 
 ShoStack records the engineering discipline I use in day-to-day product work — **not a prompt pack assembled for resale**. It connects business intent, architecture, coding-agent instructions, system contracts, verification and accountable handoff.
@@ -55,6 +65,7 @@ The second deep dive sharpened the recurring loop into:
 | [Privacy-aware observability](skills/privacy-aware-observability/SKILL.md) | Diagnose and audit without copying secrets/private payloads |
 | [Provenance & promotion](skills/provenance-and-promotion/SKILL.md) | Preserve source identity and promote state explicitly |
 | [Compound engineering](skills/compound-engineering/SKILL.md) | Convert repeated lessons into reusable system capability |
+| [Idea-to-SaaS discovery](skills/idea-to-saas-discovery/SKILL.md) | Progressive founder-led product discovery and meaningful rites of passage; **candidate** |
 | [SaaS delivery discipline](skills/saas-delivery-discipline/SKILL.md) | Product-to-verified-change workflow; new **candidate** synthesis |
 
 ## Implementation skills

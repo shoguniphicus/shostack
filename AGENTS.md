@@ -7,9 +7,10 @@ ShoStack records **evidence-backed engineering skills**. Treat it as an operatin
 1. `README.md`
 2. `docs/DISCLOSURE-POLICY.md`
 3. `docs/EVIDENCE.md`
-4. `docs/SAAS-DELIVERY-SYSTEM.md` when presenting the working harness
-5. the relevant `skills/<name>/SKILL.md`
-6. the newest relevant file under `docs/working/`
+4. `docs/RITES-OF-PASSAGE.md` and `docs/FOUNDER-STEERING-PATTERNS.md` for discovery/product-shaping work
+5. `docs/SAAS-DELIVERY-SYSTEM.md` when presenting the working harness
+6. the relevant `skills/<name>/SKILL.md`
+7. the newest relevant file under `docs/working/`
 
 ## Working rule
 
