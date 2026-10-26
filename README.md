@@ -8,6 +8,17 @@ It is deliberately **not** a mirror of source repositories. Private or proprieta
 
 See [the disclosure policy](docs/DISCLOSURE-POLICY.md).
 
+## The working system behind real SaaS builds
+
+ShoStack records the engineering discipline I use in day-to-day product work — **not a prompt pack assembled for resale**. It connects business intent, architecture, coding-agent instructions, system contracts, verification and accountable handoff.
+
+- [**How I take a SaaS change from problem to verified delivery**](docs/SAAS-DELIVERY-SYSTEM.md)
+- [**Copy and adapt the public starter**](starter/README.md) — agent instructions, working records, boundary contracts and release evidence
+- [**Products in practice**](docs/PROJECTS-IN-PRACTICE.md) — public product context, without copying client implementation
+
+These are public methods and editable templates, **not** a finished commercial installer or independently benchmarked harness.
+
+
 ## The ShoStack loop
 
 The second deep dive sharpened the recurring loop into:
@@ -44,6 +55,7 @@ The second deep dive sharpened the recurring loop into:
 | [Privacy-aware observability](skills/privacy-aware-observability/SKILL.md) | Diagnose and audit without copying secrets/private payloads |
 | [Provenance & promotion](skills/provenance-and-promotion/SKILL.md) | Preserve source identity and promote state explicitly |
 | [Compound engineering](skills/compound-engineering/SKILL.md) | Convert repeated lessons into reusable system capability |
+| [SaaS delivery discipline](skills/saas-delivery-discipline/SKILL.md) | Product-to-verified-change workflow; new **candidate** synthesis |
 
 ## Implementation skills
 

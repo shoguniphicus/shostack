@@ -50,3 +50,7 @@ When mining a source repo, look especially for:
 ## Design goal
 
 A coding agent that knows nothing about Sho should be able to read one `SKILL.md` and reproduce the engineering behaviour without learning how any proprietary source product is internally built.
+
+## Product delivery synthesis
+
+[SaaS delivery discipline](saas-delivery-discipline/SKILL.md) links existing methods into a full product change lifecycle. This newly packaged starter is a **candidate**, not a benchmarked commercial tool. Start with [the public templates](../starter/README.md).

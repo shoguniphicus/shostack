@@ -7,8 +7,9 @@ ShoStack records **evidence-backed engineering skills**. Treat it as an operatin
 1. `README.md`
 2. `docs/DISCLOSURE-POLICY.md`
 3. `docs/EVIDENCE.md`
-4. the relevant `skills/<name>/SKILL.md`
-5. the newest relevant file under `docs/working/`
+4. `docs/SAAS-DELIVERY-SYSTEM.md` when presenting the working harness
+5. the relevant `skills/<name>/SKILL.md`
+6. the newest relevant file under `docs/working/`
 
 ## Working rule
 
@@ -81,6 +82,10 @@ Prefer tool-agnostic behaviour. Put framework-specific mechanics only in impleme
 - Do not force-update `main`.
 - Compare `dev` with current `main` before merge.
 - Keep commits coherent; documentation and the skill it describes should land together.
+
+## Product-context and commercial claims
+
+Use public product names only for authorized, disclosure-safe context. Do not imply revenue, customer endorsement, exclusive authorship, common technical architecture, production readiness or measured performance without verifiable permission/evidence. Existing Apache-2.0 public methods remain distinct from any future paid tooling or support.
 
 ## Claim discipline
 
