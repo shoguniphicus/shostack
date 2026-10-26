@@ -46,3 +46,26 @@ ShoStack presently starts most visibly at repository reality and engineering exe
 
 ## Execution status
 Planning and evidence recorded before creating the method/pack. Record exact checks, changed files, release SHA and remaining gaps after implementation.
+
+## Implementation completed on dev
+- Added the canonical `docs/RITES-OF-PASSAGE.md` with nine revisitable rites (R0–R8), epistemic classification, agent question cadence and evidence-based readiness gates.
+- Added `docs/FOUNDER-STEERING-PATTERNS.md` documenting the moves: partial idea, knowledge/belief/unknown, rejection, simplify, mock-first, architecture/authority steering, audit, durable planning and release verification.
+- Added `skills/idea-to-saas-discovery/SKILL.md` as a **candidate** interviewer capability.
+- Added `starter/idea-to-saas/`: user guide, self-contained agent instructions, a conditional 29-area question coverage map, PRODUCT/DECISIONS/NEXT templates, synthetic scenarios, non-destructive initializer and its tests.
+- Linked discovery from ShoStack README, starter and skills index, agent read order and the downstream SaaS delivery guide.
+
+## Checks actually performed
+1. **Deterministic initializer:** recreated the committed script and test module locally; used stand-in Markdown template contents (including the expected interviewer keyword) to isolate file-creation behavior. `python3 -m unittest discover -s tests -v` on Python **3.13.5**: **5 tests passed** (creation, no overwrite, dry-run, missing workspace, symlink guard).
+2. `python3 -m py_compile bootstrap.py tests/test_bootstrap.py`: **passed** on the local mirror.
+3. On the GitHub `dev` tree, checked **16 Markdown files** against existing repository paths: **0 broken relative links**.
+4. Verified no literal escaped-newline formatting regressions in those documents; all nine rite markers present; 29 areas in the conditional question map; all five bootstrap input templates exist and the initializer uses exclusive file-creation mode.
+5. Basic content-level pattern scan of new/revised Markdown found **no private product-repository addresses, access-token shaped values or obvious account credentials**.
+
+## Limits not hidden
+- The deterministic tests ran on a script copy with **synthetic stand-in templates**, not a checkout of the exact repository payload, because the execution container had no GitHub network access. They establish the initializer logic only.
+- A full LLM conversational evaluation with actual novice founders **has not been run**. The eight synthetic cases define how to perform it; this package is still candidate maturity.
+- No live product, website deployment, market validation or paid offering is claimed from documentation + initializer tests.
+- Branch merge and any source link publication must be recorded separately when confirmed.
+
+## Next evaluation
+Pilot the pack with both a novice and a technically opinionated founder. Evaluate how well it asks high-impact questions, captures corrected assumptions, avoids false certainty and resumes from files. Add measured cases and revise the prompts only in response to observed errors.
